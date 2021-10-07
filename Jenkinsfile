@@ -17,7 +17,7 @@ pipeline {
 
     stage("Cloning the code from git") {
       steps {
-        git 'https://github.com/ItsSwixel/rest_api_calc.git'
+        git url: 'https://github.com/ItsSwixel/rest_api_calc.git'
       }
     }
 

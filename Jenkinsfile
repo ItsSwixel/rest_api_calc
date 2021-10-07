@@ -20,5 +20,13 @@ pipeline {
         git 'https://github.com/ItsSwixel/rest_api_calc.git'
       }
     }
+
+    stage('Build-Image') {
+      steps {
+        script {
+          DOCKER_IMAGE = docker.build REGISTRY
+        }
+      }
+    }
   }
 }

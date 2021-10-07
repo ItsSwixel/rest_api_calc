@@ -1,0 +1,18 @@
+<html>
+<body>
+<h1>This is the calculator page.</h1>
+<h2>{{value}}</h2>
+<form action="/calculate" method="post">
+  <label for="num1">First Number: </label>
+  <input type="text" name="number1" id="num1" required /><br><br>
+  <label for="num2">Second Number: </label>
+  <input type="text" name="number2" id="num2" required /><br><br>
+  <input type="submit" value="Calculate">
+</form>
+<h3>Results:</h3>
+{{addi}}<br>
+{{subt}}<br>
+{{mult}}<br>
+{{divi}}
+</body>
+</html>

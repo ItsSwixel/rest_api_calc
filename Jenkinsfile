@@ -33,7 +33,10 @@ pipeline {
     stage('Test the docker container') {
       steps {
         script {
-          sh "docker run -v $PWD/test-results:/reports --workdir $PROJECT_DIR $REGISTRY pytest -v --junitxml=/reports/results.xml"
+          sh '''
+            docker run -v $PWD/test-results:/reports --workdir $PROJECT_DIR $REGISTRY pytest -v --junitxml=/reports/results.xml
+            ls -la $PWD/test-results
+          '''
         }
       }
       post {

@@ -2,7 +2,7 @@ import pytest
 from calc_package import calc_module
 
 def test_addition():
-    assert calc_module.addition(10, 15) == 25, "You have an issue in addition function"
+    assert calc_module.addition(10, 15) == -25, "You have an issue in addition function"
     assert calc_module.addition(1, 2) == 3, "You have an issue in addition function"
     assert calc_module.addition(15, 15) == 30, "You have an issue in addition function"
     assert calc_module.addition(-12, -11) == -23, "You have an issue in addition function"

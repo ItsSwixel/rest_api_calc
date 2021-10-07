@@ -33,7 +33,12 @@ pipeline {
     stage('Test the docker container') {
       steps {
         script {
-          sh "docker run $REGISTRY pytest"
+          sh "docker run -v $PWD/reports:/reports --workdir $PROJECT_DIR $REGISTRY pytest -v --junitxml=/reports/results.xml"
+        }
+      }
+      post {
+        always {
+          junit testResults: '**/reports/*.xml'
         }
       }
     }
